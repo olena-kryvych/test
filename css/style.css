@@ -1,0 +1,300 @@
+body {
+    margin: 0;
+    font-family: 'Noto Sans Mono', monospace;
+    font-family: 'Pacifico', cursive;
+    font-size: 18px;
+    color: aliceblue;
+    /* line-height: 1.6; */
+}
+
+*,
+*:before,
+*:after p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+/* розділ */
+
+.section {
+
+    padding: 80px 0;
+    background: url("../images/Untitled.png") center no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.section__header {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 5px;
+    text-align: center;
+}
+
+.section__title {
+    font-size: 28px;
+    color: #173D67;
+    margin: 0 auto 30px;
+    font-family: 'Pacifico', cursive;
+    text-transform: uppercase;
+
+}
+
+.section__text {
+    font-size: 25px;
+    font-family: 'Noto Sans Mono', monospace;
+    font-weight: 500;
+    color: #523f18;
+
+}
+
+
+/* кнопка */
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 62px;
+
+    border: 3px solid #ffffff;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 300;
+    align-items: center;
+    text-decoration: none;
+
+    transition: background .1s linear, color .1s linear;
+
+}
+
+.btn {
+    margin: 20px;
+    border-radius: 32px;
+    user-select: none;
+}
+
+.btn:hover {
+    background-color: rgba(23, 61, 103, 0.6);
+    border: 3px solid rgba(23, 60, 103, 0);
+    /* opacity: 0.6; */
+
+    color: #ffffff;
+}
+
+
+.modal__body {
+    overflow-y: auto;
+    position: relative;
+    margin: 0 24px;
+    max-height: 100%;
+    max-width: 380px;
+    -ms-overflow-style: none;
+    /* приховати смугу прокручування */
+    scrollbar-width: none;
+    /* приховати смугу прокручування */
+}
+
+.modal__body::-webkit-scrollbar {
+    /* приховати смугу прокручування */
+    display: none;
+}
+
+
+.modal {
+    /* початкові стилі */
+    visibility: hidden;
+    /* приховуємо модальне вікно */
+    opacity: 0;
+    /* робимо прозорим */
+    position: fixed;
+    /* робимо блок фіксованим */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    background: rgba(255, 255, 255, 0.8);
+    /* фон для затемнення */
+    z-index: 9999;
+    /* перекриваємо всі елементи */
+    transition: visibility 0s 0.25s, opacity 0.25s;
+    /* додаємо для плавного переходу */
+}
+
+.modal_active {
+    /* активний клас модального вікна */
+    opacity: 1;
+    /* прибираємо прозорість */
+    visibility: visible;
+    /* відображаємо блок модального вікна */
+    transition: visibility 0s 0s, opacity 0.25s;
+    /* додаємо для плавного переходу */
+}
+
+.modal__wrapper {
+    /* блок обгортка для центрування контентної частини модального вікна */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.modal__body {
+    /* ще один блок обгортка для можливості прокручування контенту, якщо модальне вікно не поміщається по висоті */
+    overflow-y: auto;
+    /* додаємо смугу прокручування при недостатній висоті */
+    position: relative;
+    margin: 0 24px;
+    /* бічні відступи для мобільних екранів */
+    max-height: 100%;
+    max-width: 1000px;
+    -ms-overflow-style: none;
+    /* приховуємо смугу прокручування */
+    scrollbar-width: none;
+    /* приховуємо смугу прокручування */
+}
+
+.modal__body::-webkit-scrollbar {
+    /* приховуємо смугу прокручування */
+    display: none;
+}
+
+.modal__inner__one {
+    /* стилізуємо контентну частину */
+    display: flex;
+    flex-direction: column;
+    background: #66ba669a;
+    width: 450px;
+    height: 80px;
+    padding: 64px 24px;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    border-radius: 30px;
+    position: relative;
+    margin: 24px 0;
+    /* відступи зверху та знизу, щоб контентна частина модального вікна не прилипала до меж браузера при недостатній висоті */
+}
+
+.modal__inner__two {
+    /* стилізуємо контентну частину */
+    display: flex;
+    flex-direction: column;
+    background: #ba666690;
+    width: 450px;
+    height: 80px;
+    padding: 64px 24px;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    border-radius: 30px;
+    position: relative;
+    margin: 24px 0;
+    /* відступи зверху та знизу, щоб контентна частина модального вікна не прилипала до меж браузера при недостатній висоті */
+}
+
+.modal__close {
+
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0;
+}
+
+.modal__title {
+    margin: 0px 0px 10px;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 24px;
+}
+
+.modal__text {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+
+input[type="radio"]:checked,
+input[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+input[type="radio"]:checked+label,
+input[type="radio"]:not(:checked)+label {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    line-height: 18px;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked+label:before,
+input[type="radio"]:not(:checked)+label:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #d7d8b100;
+    background-color: #d7d8b1ab;
+}
+
+input[type="radio"]:checked+label:before,
+input[type="radio"]:not(:checked)+label:before {
+    border-radius: 100%;
+}
+
+input[type="radio"]:checked+label:after,
+input[type="radio"]:not(:checked)+label:after {
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+input[type="radio"]:checked+label:after,
+input[type="radio"]:not(:checked)+label:after {
+    left: 3px;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 100%;
+    background-color: #173D67;
+}
+
+
+input[type="radio"]:not(:checked)+label:after {
+    opacity: 0;
+}
+
+input[type="radio"]:checked+label:after {
+    opacity: 0.6;
+}
+
+.textcols {
+	white-space: nowrap;
+}
+.textcols-item {
+	white-space: normal;	
+	display: inline-block;
+	width: 59px;
+	vertical-align: top;
+	background: #ffe1e100;
+}
+.textcols .textcols-item:first-child {
+	margin-right: 20px;
+}
